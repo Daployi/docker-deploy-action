@@ -1,0 +1,67 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+**/node_modules/
+
+# Build output
+build/
+dist/
+dist-ssr/
+.out/
+
+# Temp and caches
+.cache/
+.tmp/
+.temp/
+tmp/
+
+# Test coverage
+coverage/
+*.lcov
+
+# Nuxt / Vue / Vite
+.nuxt/
+.output/
+.vite/
+.vite-cache/
+.sass-cache/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE/editor
+.idea/
+.vscode/
+*.iml
+
+# Misc
+.eslintcache
+.yarn-integrity
+.npm
+
+# Secrets
+.secrets/
+.secrets/*

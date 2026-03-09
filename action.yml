@@ -1,0 +1,24 @@
+name: "Daployi Docker Compose Deploy"
+description: "Deploy Docker Compose stacks to the Daployi platform from GitHub Actions"
+
+branding:
+  icon: "upload-cloud"
+  color: "blue"
+
+inputs:
+  api_token:
+    description: "Daployi API token"
+    required: true
+  project_id:
+    description: "Project ID"
+    required: false
+  variables:
+    description: "JSON string of variables to override"
+    required: false
+  api_url:
+    description: "The base URL of the Daployi instance"
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

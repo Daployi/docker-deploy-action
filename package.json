@@ -1,0 +1,19 @@
+{
+  "name": "daployi-git-action",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --minify --no-cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "axios": "^1.13.6"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4"
+  }
+}
