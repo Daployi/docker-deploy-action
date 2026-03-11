@@ -42,11 +42,12 @@ async function run() {
     while (true) {
       const statusResponse = await axios.get(statusUrl, { params: { uuid } });
       const status = statusResponse.data;
-      const { state, overallProgress, actionName } = status;
+      const { state, overallProgress, actionName, complete } = status;
 
+      core.debug(`Full status response: ${JSON.stringify(status)}`);
       core.info(`Action: ${actionName} | Status: ${state} (${overallProgress}%)`);
 
-      if (state === 'success') {
+      if ((state === 'success' || state === 'completed') && complete === true) {
         core.info('✅ Deployment Successful!');
         break;
       }
