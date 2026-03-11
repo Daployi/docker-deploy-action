@@ -6,6 +6,9 @@ async function run() {
     const apiToken = core.getInput('api_token', { required: true });
     const variablesInput = core.getInput('variables');
     let apiUrl = core.getInput('api_url', { required: true });
+    const timeoutMinutes = parseInt(core.getInput('timeout') || '60', 10);
+    const timeoutMs = timeoutMinutes * 60 * 1000;
+    const startTime = Date.now();
 
     // Remove trailing slash from apiUrl if present
     if (apiUrl.endsWith('/')) {
@@ -71,6 +74,11 @@ async function run() {
         }
         
         core.setFailed('Daployi deployment failed.');
+        break;
+      }
+
+      if (Date.now() - startTime > timeoutMs) {
+        core.setFailed(`Deployment timed out after ${timeoutMinutes} minutes.`);
         break;
       }
 

@@ -18,6 +18,10 @@ inputs:
   api_url:
     description: "The base URL of the Daployi instance"
     required: true
+  timeout:
+    description: "Timeout in minutes for waiting for the deployment to finish"
+    required: false
+    default: "60"
 
 runs:
   using: "node24"
