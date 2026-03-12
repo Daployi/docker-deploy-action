@@ -17,7 +17,7 @@ Deploy Docker Compose stacks to the Daployi platform from GitHub Actions. Daploy
 ## Usage
 
 ```yaml
-- name: Deploy to Daployi
+- name: Deploy with Daployi
   uses: daployi/docker-deploy-action@v1
   with:
     api_url: https://api.daployi.yourdomain.com
